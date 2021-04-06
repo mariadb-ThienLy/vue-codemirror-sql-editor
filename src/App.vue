@@ -3,7 +3,9 @@
         <h1 class="title">Editor view using codemirror</h1>
         <editor-view :dist="dist" @on-change="onEditorChange" />
         <p>Query to sent via API</p>
-        <code>{{ queryData }}</code>
+        <code>
+            <pre>{{ queryData }}</pre>
+        </code>
     </div>
 </template>
 
@@ -21,7 +23,7 @@ export default {
                 table1: ['col_A', 'col_B', 'col_C'],
                 table2: ['other_columns1', 'other_columns2'],
             },
-            queryData: null,
+            queryData: '',
         }
     },
 
