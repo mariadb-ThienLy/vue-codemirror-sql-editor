@@ -23,6 +23,8 @@ $table-row-hover: #fafcfc;
 $black: #000;
 $fontFamily: 'Operator Mono', 'Source Code Pro', Menlo, Monaco, Consolas, Courier New, monospace;
 .cm-s-mariadb-style {
+    width: 100%;
+    height: 100%;
     background: $background;
     color: $code-color;
     line-height: 1.75;

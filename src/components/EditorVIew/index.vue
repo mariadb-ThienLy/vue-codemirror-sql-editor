@@ -1,5 +1,5 @@
 <template>
-    <textarea ref="txt" class="txt" />
+    <textarea ref="txt" class="txt" v-model="queryData" />
 </template>
 
 <script>
@@ -13,18 +13,14 @@ export default {
     name: 'editor-view',
     props: {
         dist: { type: Object, require: true },
+        queryData: { type: String, require: true },
     },
     data() {
         return {
-            queryData: null,
             editor: null,
         }
     },
-    watch: {
-        queryData: function (v) {
-            this.$emit('on-change', v)
-        },
-    },
+
     mounted() {
         this.editor = CodeMirror.fromTextArea(this.$refs.txt, {
             tabSize: 4,
@@ -47,7 +43,7 @@ export default {
 
         const self = this
         this.editor.on('change', function (cm) {
-            self.queryData = cm.getValue()
+            self.$emit('on-change', cm.getValue())
         })
     },
 }
