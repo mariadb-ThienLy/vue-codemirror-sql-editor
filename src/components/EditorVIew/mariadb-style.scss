@@ -115,7 +115,7 @@ $fontFamily: 'Operator Mono', 'Source Code Pro', Menlo, Monaco, Consolas, Courie
 
 .CodeMirror-hints {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     overflow: hidden;
     list-style: none;
     margin: 0;
@@ -136,6 +136,7 @@ $fontFamily: 'Operator Mono', 'Source Code Pro', Menlo, Monaco, Consolas, Courie
     border-radius: 2px;
     white-space: pre;
     color: black;
+
     cursor: pointer;
 }
 
@@ -147,7 +148,7 @@ li.CodeMirror-hint-active {
 .CodeMirror-hint-keyword {
     color: $links;
     &::after {
-        content: 'sql';
+        content: 'Keyword';
         padding-left: 20px;
         font-style: italic;
         float: right;
@@ -158,7 +159,7 @@ li.CodeMirror-hint-active {
 .CodeMirror-hint-table {
     color: $text-subtle;
     &::after {
-        content: 'table';
+        content: 'Table';
         padding-left: 20px;
         font-style: italic;
         float: right;
